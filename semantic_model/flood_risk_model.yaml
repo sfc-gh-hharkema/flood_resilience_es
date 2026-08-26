@@ -1,0 +1,224 @@
+name: flood_risk_model
+description: >
+  Valencia flood vulnerability analysis model.
+  Combines Overture Maps building footprints with flood risk scores,
+  social vulnerability index, and derived PATRICOVA flood zone designations.
+
+tables:
+  - name: BUILDING_FLOOD_RISK
+    base_table:
+      database: FLOOD_ANALYTICS
+      schema: FLOOD
+      table: BUILDING_FLOOD_RISK
+    description: >
+      Individual buildings in Comunitat Valenciana with flood risk scores, PATRICOVA flood zone
+      designations, and social vulnerability data. Each row is one building.
+    dimensions:
+      - name: PARISH
+        expr: PARISH
+        description: Valencia comarca name (administrative district)
+        data_type: TEXT
+        unique: false
+      - name: FLOOD_ZONE
+        expr: FLOOD_ZONE
+        description: >
+          PATRICOVA flood zone designation.
+          A1 = Frequent fluvial + coastal flooding (no new development),
+          A2 = Occasional flooding (elevated ground floor required),
+          B = Geomorphic flood risk (development with conditions),
+          C = Low risk (standard regulations).
+        data_type: TEXT
+      - name: IN_SPECIAL_FLOOD_HAZARD_AREA
+        expr: IN_SPECIAL_FLOOD_HAZARD_AREA
+        description: >
+          TRUE if building is in a PATRICOVA high-risk flood zone (Zone A1 or A2).
+          Buildings here face development restrictions.
+        data_type: BOOLEAN
+      - name: CLASS
+        expr: CLASS
+        description: >
+          Building type from Overture Maps (e.g. residential, commercial, hospital,
+          school, fire_station, church, nursing_home, government).
+        data_type: TEXT
+      - name: NRI_RISK_RATING
+        expr: NRI_RISK_RATING
+        description: >
+          Overall risk rating for the comarca zone:
+          Very High | Relatively High | Relatively Moderate | Relatively Low | Very Low
+        data_type: TEXT
+      - name: INLAND_FLOOD_RISK_RATING
+        expr: INLAND_FLOOD_RISK_RATING
+        description: Fluvial (riverine) flooding risk rating for the zone
+        data_type: TEXT
+      - name: COASTAL_FLOOD_RISK_RATING
+        expr: COASTAL_FLOOD_RISK_RATING
+        description: Coastal flooding risk rating for the zone
+        data_type: TEXT
+    measures:
+      - name: BUILDING_COUNT
+        expr: COUNT(BUILDING_ID)
+        description: Total number of buildings
+        data_type: NUMBER
+        default_aggregation: count
+      - name: COMPOSITE_VULNERABILITY_SCORE
+        expr: AVG(COMPOSITE_VULNERABILITY_SCORE)
+        description: >
+          Average composite vulnerability score (0-100) combining flood risk (40%),
+          social vulnerability (30%), and flood zone exposure (30%).
+          Higher score = more vulnerable.
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: NRI_RISK_SCORE
+        expr: AVG(NRI_RISK_SCORE)
+        description: Average flood risk score for the zone (0-100)
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: SVI_OVERALL
+        expr: AVG(SVI_OVERALL)
+        description: >
+          Average Social Vulnerability Index score (0-1).
+          0 = least vulnerable, 1 = most vulnerable.
+          Accounts for socioeconomic status, demographics, and housing conditions.
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: EXPECTED_ANNUAL_LOSS
+        expr: SUM(EXPECTED_ANNUAL_LOSS)
+        description: Total expected annual loss from flood hazards in euros
+        data_type: NUMBER
+        default_aggregation: sum
+      - name: EAL_BUILDINGS
+        expr: SUM(EAL_BUILDINGS)
+        description: Expected annual loss for buildings specifically in euros
+        data_type: NUMBER
+        default_aggregation: sum
+      - name: BUILDINGS_IN_SFHA
+        expr: SUM(CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END)
+        description: Number of buildings in high-risk flood zones (A1 or A2)
+        data_type: NUMBER
+        default_aggregation: sum
+      - name: PCT_IN_SFHA
+        expr: SUM(CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END) * 100.0 / COUNT(*)
+        description: Percentage of buildings located in high-risk flood zones
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: MOBILE_HOME_PCT
+        expr: AVG(MOBILE_HOME_PCT)
+        description: >
+          Average elderly population percentile rank.
+          Elderly residents face greater evacuation difficulties during floods.
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: NO_VEHICLE_PCT
+        expr: AVG(NO_VEHICLE_PCT)
+        description: >
+          Average immigrant population percentile rank.
+          Language barriers can impede emergency communication.
+        data_type: NUMBER
+        default_aggregation: avg
+
+  - name: PARISH_FLOOD_SUMMARY
+    base_table:
+      database: FLOOD_ANALYTICS
+      schema: FLOOD
+      table: PARISH_FLOOD_SUMMARY
+    description: >
+      Comarca-level aggregated flood risk statistics.
+      One row per Valencia comarca (34 total).
+    dimensions:
+      - name: PARISH
+        expr: PARISH
+        description: Valencia comarca name
+        data_type: TEXT
+        unique: true
+    measures:
+      - name: TOTAL_BUILDINGS
+        expr: SUM(TOTAL_BUILDINGS)
+        description: Total number of buildings in the comarca
+        data_type: NUMBER
+        default_aggregation: sum
+      - name: BUILDINGS_IN_SFHA
+        expr: SUM(BUILDINGS_IN_SFHA)
+        description: Number of buildings in high-risk flood zones (A1 or A2)
+        data_type: NUMBER
+        default_aggregation: sum
+      - name: PCT_IN_SFHA
+        expr: AVG(PCT_IN_SFHA)
+        description: Percentage of buildings located in flood zones
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: AVG_COMPOSITE_SCORE
+        expr: AVG(AVG_COMPOSITE_SCORE)
+        description: Average composite vulnerability score for the comarca (0-100)
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: AVG_NRI_RISK_SCORE
+        expr: AVG(AVG_NRI_RISK_SCORE)
+        description: Average flood risk score for the comarca
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: AVG_SVI_SCORE
+        expr: AVG(AVG_SVI_SCORE)
+        description: Average Social Vulnerability Index score for the comarca (0-1)
+        data_type: NUMBER
+        default_aggregation: avg
+      - name: TOTAL_EXPECTED_ANNUAL_LOSS
+        expr: SUM(TOTAL_EXPECTED_ANNUAL_LOSS)
+        description: Total expected annual loss from flood hazards in euros
+        data_type: NUMBER
+        default_aggregation: sum
+      - name: BUILDING_EXPECTED_ANNUAL_LOSS
+        expr: SUM(BUILDING_EXPECTED_ANNUAL_LOSS)
+        description: Expected annual loss for buildings in euros
+        data_type: NUMBER
+        default_aggregation: sum
+
+verified_queries:
+  - name: most_vulnerable_comarcas
+    question: "Which comarcas have the highest composite flood vulnerability score?"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT PARISH, AVG_COMPOSITE_SCORE, AVG_NRI_RISK_SCORE, AVG_SVI_SCORE,
+             PCT_IN_SFHA, TOTAL_EXPECTED_ANNUAL_LOSS
+      FROM FLOOD_ANALYTICS.FLOOD.PARISH_FLOOD_SUMMARY
+      ORDER BY AVG_COMPOSITE_SCORE DESC
+      LIMIT 10
+
+  - name: buildings_in_flood_zones
+    question: "How many buildings are in high-risk flood zones by comarca?"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT PARISH, BUILDINGS_IN_SFHA, TOTAL_BUILDINGS, PCT_IN_SFHA
+      FROM FLOOD_ANALYTICS.FLOOD.PARISH_FLOOD_SUMMARY
+      ORDER BY BUILDINGS_IN_SFHA DESC
+
+  - name: critical_infra_at_risk
+    question: "How many hospitals and schools are in flood zones?"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT CLASS, COUNT(*) AS TOTAL,
+             SUM(CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END) AS IN_HIGH_RISK,
+             ROUND(SUM(CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 1) AS PCT_IN_HIGH_RISK
+      FROM FLOOD_ANALYTICS.FLOOD.BUILDING_FLOOD_RISK
+      WHERE CLASS IN ('hospital','clinic','school','fire_station','nursing_home')
+      GROUP BY CLASS
+      ORDER BY PCT_IN_HIGH_RISK DESC
+
+  - name: high_svi_flood_overlap
+    question: "Which comarcas have both high social vulnerability and high flood exposure?"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT PARISH, AVG_SVI_SCORE, PCT_IN_SFHA, AVG_COMPOSITE_SCORE
+      FROM FLOOD_ANALYTICS.FLOOD.PARISH_FLOOD_SUMMARY
+      WHERE AVG_SVI_SCORE >= 0.6
+        AND PCT_IN_SFHA   >= 30
+      ORDER BY AVG_COMPOSITE_SCORE DESC
+
+  - name: total_annual_loss
+    question: "What is the total expected annual loss region-wide?"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT
+        SUM(TOTAL_EXPECTED_ANNUAL_LOSS)      AS REGIONWIDE_TOTAL_EAL,
+        SUM(BUILDING_EXPECTED_ANNUAL_LOSS)   AS REGIONWIDE_BUILDING_EAL,
+        COUNT(*)                             AS COMARCA_COUNT
+      FROM FLOOD_ANALYTICS.FLOOD.PARISH_FLOOD_SUMMARY

@@ -1,0 +1,82 @@
+ZONE_CODE,COMARCA_CODE,COMARCA,PROVINCE,RISK_SCORE,RISK_RATING,FLUVIAL_RISK_SCORE,FLUVIAL_RISK_RATING,COASTAL_RISK_SCORE,COASTAL_RISK_RATING,DANA_RISK_SCORE,EXPECTED_ANNUAL_LOSS,EAL_BUILDINGS
+46001-Z1,46001,L'Horta Nord,Valencia,62.3,Relatively High,58.1,Relatively High,45.2,Relatively Moderate,71.0,4850000,3200000
+46001-Z2,46001,L'Horta Nord,Valencia,55.8,Relatively Moderate,52.4,Relatively Moderate,38.6,Relatively Low,65.3,3200000,2100000
+46001-Z3,46001,L'Horta Nord,Valencia,48.2,Relatively Moderate,44.7,Relatively Moderate,30.1,Relatively Low,58.9,2100000,1400000
+46002-Z1,46002,L'Horta Sud,Valencia,78.4,Very High,82.1,Very High,52.3,Relatively High,85.6,9800000,6500000
+46002-Z2,46002,L'Horta Sud,Valencia,71.6,Very High,75.3,Very High,48.7,Relatively Moderate,79.2,7200000,4800000
+46002-Z3,46002,L'Horta Sud,Valencia,65.1,Relatively High,68.9,Relatively High,42.1,Relatively Moderate,72.8,5100000,3400000
+46003-Z1,46003,L'Horta Oest,Valencia,52.7,Relatively Moderate,55.2,Relatively Moderate,22.4,Relatively Low,63.1,3400000,2300000
+46003-Z2,46003,L'Horta Oest,Valencia,46.3,Relatively Moderate,48.8,Relatively Moderate,18.9,Very Low,56.7,2500000,1700000
+46004-Z1,46004,Camp de Turia,Valencia,38.9,Relatively Low,42.1,Relatively Moderate,12.3,Very Low,48.5,1800000,1200000
+46004-Z2,46004,Camp de Turia,Valencia,32.4,Relatively Low,35.6,Relatively Low,8.7,Very Low,41.2,1200000,800000
+46005-Z1,46005,Camp de Morvedre,Valencia,45.6,Relatively Moderate,48.3,Relatively Moderate,38.9,Relatively Low,52.1,2800000,1900000
+46005-Z2,46005,Camp de Morvedre,Valencia,39.2,Relatively Low,41.7,Relatively Moderate,32.4,Relatively Low,45.8,1900000,1300000
+46006-Z1,46006,La Ribera Alta,Valencia,72.8,Very High,78.5,Very High,18.2,Very Low,82.3,8500000,5600000
+46006-Z2,46006,La Ribera Alta,Valencia,68.1,Relatively High,73.2,Very High,15.6,Very Low,76.9,6800000,4500000
+46006-Z3,46006,La Ribera Alta,Valencia,61.5,Relatively High,66.8,Relatively High,12.3,Very Low,70.2,5200000,3400000
+46006-Z4,46006,La Ribera Alta,Valencia,55.2,Relatively Moderate,59.4,Relatively High,9.8,Very Low,63.8,3800000,2500000
+46007-Z1,46007,La Ribera Baixa,Valencia,85.2,Very High,88.7,Very High,62.4,Relatively High,91.3,12500000,8300000
+46007-Z2,46007,La Ribera Baixa,Valencia,79.8,Very High,83.1,Very High,58.9,Relatively High,86.5,10200000,6800000
+46007-Z3,46007,La Ribera Baixa,Valencia,73.4,Very High,76.8,Very High,52.1,Relatively High,80.1,8100000,5400000
+46008-Z1,46008,La Safor,Valencia,67.9,Relatively High,62.5,Relatively High,55.8,Relatively High,74.6,6200000,4100000
+46008-Z2,46008,La Safor,Valencia,61.3,Relatively High,56.2,Relatively Moderate,49.3,Relatively Moderate,68.1,4800000,3200000
+46008-Z3,46008,La Safor,Valencia,54.7,Relatively Moderate,49.8,Relatively Moderate,42.7,Relatively Moderate,61.5,3500000,2300000
+46009-Z1,46009,La Costera,Valencia,42.1,Relatively Moderate,45.6,Relatively Moderate,8.2,Very Low,52.8,2200000,1500000
+46009-Z2,46009,La Costera,Valencia,36.5,Relatively Low,39.2,Relatively Low,5.4,Very Low,46.3,1600000,1100000
+46010-Z1,46010,La Vall d'Albaida,Valencia,44.8,Relatively Moderate,48.2,Relatively Moderate,6.1,Very Low,55.4,2400000,1600000
+46010-Z2,46010,La Vall d'Albaida,Valencia,38.2,Relatively Low,41.5,Relatively Moderate,4.2,Very Low,48.7,1700000,1100000
+46011-Z1,46011,La Canal de Navares,Valencia,58.6,Relatively High,63.4,Relatively High,5.8,Very Low,67.2,4200000,2800000
+46011-Z2,46011,La Canal de Navares,Valencia,51.3,Relatively Moderate,55.8,Relatively Moderate,4.1,Very Low,59.8,3100000,2100000
+46012-Z1,46012,La Hoya de Bunol,Valencia,35.4,Relatively Low,38.7,Relatively Low,3.2,Very Low,44.1,1500000,1000000
+46012-Z2,46012,La Hoya de Bunol,Valencia,29.8,Relatively Low,32.1,Relatively Low,2.1,Very Low,37.5,1000000,700000
+46013-Z1,46013,Utiel-Requena,Valencia,31.2,Relatively Low,34.5,Relatively Low,2.5,Very Low,40.8,1100000,750000
+46013-Z2,46013,Utiel-Requena,Valencia,25.6,Relatively Low,28.3,Relatively Low,1.8,Very Low,33.9,780000,520000
+46014-Z1,46014,Los Serranos,Valencia,28.7,Relatively Low,31.9,Relatively Low,2.0,Very Low,36.4,950000,630000
+46014-Z2,46014,Los Serranos,Valencia,22.4,Very Low,24.8,Relatively Low,1.2,Very Low,29.1,620000,410000
+46015-Z1,46015,El Raco d'Ademus,Valencia,24.3,Relatively Low,27.1,Relatively Low,1.5,Very Low,31.5,540000,360000
+46016-Z1,46016,Valencia,Valencia,68.5,Relatively High,72.3,Very High,48.6,Relatively Moderate,76.8,11200000,7400000
+46016-Z2,46016,Valencia,Valencia,62.8,Relatively High,66.1,Relatively High,44.2,Relatively Moderate,70.3,8900000,5900000
+46016-Z3,46016,Valencia,Valencia,57.1,Relatively Moderate,60.4,Relatively High,39.8,Relatively Low,64.5,6800000,4500000
+46016-Z4,46016,Valencia,Valencia,51.4,Relatively Moderate,54.7,Relatively Moderate,35.1,Relatively Low,58.2,5200000,3400000
+03001-Z1,03001,La Marina Alta,Alicante,58.3,Relatively High,52.1,Relatively Moderate,62.8,Relatively High,65.7,4600000,3000000
+03001-Z2,03001,La Marina Alta,Alicante,52.7,Relatively Moderate,46.5,Relatively Moderate,56.3,Relatively Moderate,59.2,3400000,2300000
+03001-Z3,03001,La Marina Alta,Alicante,46.1,Relatively Moderate,40.2,Relatively Low,49.8,Relatively Moderate,52.6,2500000,1700000
+03002-Z1,03002,La Marina Baixa,Alicante,54.6,Relatively Moderate,48.3,Relatively Moderate,58.9,Relatively High,61.8,3900000,2600000
+03002-Z2,03002,La Marina Baixa,Alicante,48.2,Relatively Moderate,42.1,Relatively Moderate,52.4,Relatively Moderate,55.3,2900000,1900000
+03003-Z1,03003,El Comtat,Alicante,32.8,Relatively Low,36.4,Relatively Low,5.2,Very Low,41.6,1200000,800000
+03003-Z2,03003,El Comtat,Alicante,27.1,Relatively Low,30.2,Relatively Low,3.8,Very Low,35.2,850000,560000
+03004-Z1,03004,L'Alcoia,Alicante,35.6,Relatively Low,38.9,Relatively Low,6.8,Very Low,43.2,1400000,930000
+03004-Z2,03004,L'Alcoia,Alicante,29.3,Relatively Low,32.4,Relatively Low,4.5,Very Low,36.8,980000,650000
+03005-Z1,03005,L'Alt Vinalopo,Alicante,28.4,Relatively Low,31.2,Relatively Low,3.6,Very Low,35.9,890000,590000
+03005-Z2,03005,L'Alt Vinalopo,Alicante,22.8,Very Low,25.1,Relatively Low,2.4,Very Low,29.5,620000,410000
+03006-Z1,03006,El Vinalopo Mitja,Alicante,38.5,Relatively Low,42.1,Relatively Moderate,12.3,Very Low,47.8,1700000,1100000
+03006-Z2,03006,El Vinalopo Mitja,Alicante,32.9,Relatively Low,36.4,Relatively Low,8.7,Very Low,41.2,1200000,800000
+03007-Z1,03007,El Baix Vinalopo,Alicante,52.3,Relatively Moderate,48.6,Relatively Moderate,55.1,Relatively Moderate,59.7,3600000,2400000
+03007-Z2,03007,El Baix Vinalopo,Alicante,46.8,Relatively Moderate,42.9,Relatively Moderate,49.5,Relatively Moderate,53.4,2700000,1800000
+03008-Z1,03008,La Vega Baja,Alicante,82.1,Very High,78.4,Very High,72.6,Very High,88.9,11800000,7800000
+03008-Z2,03008,La Vega Baja,Alicante,76.5,Very High,72.8,Very High,67.1,Relatively High,83.2,9500000,6300000
+03008-Z3,03008,La Vega Baja,Alicante,70.2,Very High,66.5,Relatively High,61.4,Relatively High,77.6,7600000,5000000
+03008-Z4,03008,La Vega Baja,Alicante,63.8,Relatively High,60.1,Relatively High,55.7,Relatively Moderate,71.3,5800000,3800000
+03009-Z1,03009,L'Alacanti,Alicante,48.7,Relatively Moderate,42.3,Relatively Moderate,52.6,Relatively Moderate,55.9,3100000,2100000
+03009-Z2,03009,L'Alacanti,Alicante,42.1,Relatively Moderate,36.8,Relatively Low,46.2,Relatively Moderate,49.3,2300000,1500000
+12001-Z1,12001,La Plana Alta,Castellon,44.3,Relatively Moderate,47.8,Relatively Moderate,35.6,Relatively Low,51.2,2500000,1700000
+12001-Z2,12001,La Plana Alta,Castellon,38.7,Relatively Low,41.2,Relatively Moderate,29.8,Relatively Low,44.8,1800000,1200000
+12001-Z3,12001,La Plana Alta,Castellon,32.1,Relatively Low,34.6,Relatively Low,24.2,Relatively Low,38.4,1200000,800000
+12002-Z1,12002,La Plana Baixa,Castellon,48.9,Relatively Moderate,52.3,Relatively Moderate,38.7,Relatively Low,55.6,2900000,1900000
+12002-Z2,12002,La Plana Baixa,Castellon,42.4,Relatively Moderate,45.8,Relatively Moderate,32.1,Relatively Low,49.1,2100000,1400000
+12002-Z3,12002,La Plana Baixa,Castellon,36.8,Relatively Low,39.2,Relatively Low,26.5,Relatively Low,42.6,1500000,1000000
+12003-Z1,12003,L'Alt Maestrat,Castellon,21.5,Very Low,24.2,Relatively Low,3.1,Very Low,28.7,480000,320000
+12003-Z2,12003,L'Alt Maestrat,Castellon,17.8,Very Low,19.6,Very Low,2.2,Very Low,23.4,320000,210000
+12004-Z1,12004,El Baix Maestrat,Castellon,42.6,Relatively Moderate,38.9,Relatively Low,48.3,Relatively Moderate,49.8,2200000,1500000
+12004-Z2,12004,El Baix Maestrat,Castellon,36.2,Relatively Low,32.4,Relatively Low,42.1,Relatively Moderate,43.5,1600000,1100000
+12004-Z3,12004,El Baix Maestrat,Castellon,30.5,Relatively Low,26.8,Relatively Low,35.6,Relatively Low,37.1,1100000,730000
+12005-Z1,12005,Els Ports,Castellon,18.9,Very Low,21.4,Very Low,2.8,Very Low,25.6,380000,250000
+12005-Z2,12005,Els Ports,Castellon,14.2,Very Low,16.1,Very Low,1.5,Very Low,19.8,240000,160000
+12006-Z1,12006,L'Alcalatens,Castellon,26.3,Relatively Low,29.1,Relatively Low,4.5,Very Low,33.8,720000,480000
+12006-Z2,12006,L'Alcalatens,Castellon,21.7,Very Low,23.8,Relatively Low,3.1,Very Low,28.2,510000,340000
+12007-Z1,12007,L'Alt Millars,Castellon,23.8,Relatively Low,26.5,Relatively Low,2.8,Very Low,30.9,580000,380000
+12007-Z2,12007,L'Alt Millars,Castellon,18.4,Very Low,20.2,Very Low,1.9,Very Low,24.6,390000,260000
+12008-Z1,12008,L'Alt Palancia,Castellon,30.5,Relatively Low,33.8,Relatively Low,5.2,Very Low,38.1,1050000,700000
+12008-Z2,12008,L'Alt Palancia,Castellon,25.1,Relatively Low,27.6,Relatively Low,3.8,Very Low,32.4,740000,490000
+12009-Z1,12009,El Baix Maestrat Sud,Castellon,35.8,Relatively Low,38.2,Relatively Low,28.9,Relatively Low,42.3,1350000,900000
+12009-Z2,12009,El Baix Maestrat Sud,Castellon,29.4,Relatively Low,31.7,Relatively Low,23.4,Relatively Low,36.1,950000,630000

@@ -1,0 +1,7 @@
+version: 1
+artifacts:
+  - path: NEW_AGENT.agent.yaml
+    type: cortex_agent
+    targets:
+      default:
+        object: MY_DB.PUBLIC.NEW_AGENT

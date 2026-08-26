@@ -1,0 +1,9 @@
+definition_version: 2
+entities:
+  streamlit_app:
+    type: streamlit
+    main_file: flood_dashboard.py
+    artifacts:
+      - pyproject.toml
+      - flood_dashboard.py
+      - .streamlit/config.toml

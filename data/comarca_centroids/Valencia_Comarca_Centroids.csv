@@ -1,0 +1,35 @@
+COMARCA_CODE,COMARCA,PROVINCE,LATITUDE,LONGITUDE
+46001,L'Horta Nord,Valencia,39.5330,-0.3850
+46002,L'Horta Sud,Valencia,39.3900,-0.4020
+46003,L'Horta Oest,Valencia,39.4750,-0.4600
+46004,Camp de Turia,Valencia,39.6700,-0.5300
+46005,Camp de Morvedre,Valencia,39.6850,-0.2600
+46006,La Ribera Alta,Valencia,39.1800,-0.4500
+46007,La Ribera Baixa,Valencia,39.2000,-0.3200
+46008,La Safor,Valencia,38.9700,-0.1500
+46009,La Costera,Valencia,38.9500,-0.5200
+46010,La Vall d'Albaida,Valencia,38.8700,-0.5000
+46011,La Canal de Navares,Valencia,39.0800,-0.7500
+46012,La Hoya de Bunol,Valencia,39.4200,-0.8000
+46013,Utiel-Requena,Valencia,39.5000,-1.1000
+46014,Los Serranos,Valencia,39.7500,-0.8500
+46015,El Raco d'Ademus,Valencia,40.0500,-1.3000
+46016,Valencia,Valencia,39.4699,-0.3763
+03001,La Marina Alta,Alicante,38.7900,0.1000
+03002,La Marina Baixa,Alicante,38.6200,-0.1300
+03003,El Comtat,Alicante,38.7500,-0.4000
+03004,L'Alcoia,Alicante,38.7000,-0.4700
+03005,L'Alt Vinalopo,Alicante,38.6300,-0.8700
+03006,El Vinalopo Mitja,Alicante,38.4800,-0.7500
+03007,El Baix Vinalopo,Alicante,38.2700,-0.7000
+03008,La Vega Baja,Alicante,38.0800,-0.9200
+03009,L'Alacanti,Alicante,38.3500,-0.4800
+12001,La Plana Alta,Castellon,40.0500,-0.0500
+12002,La Plana Baixa,Castellon,39.8700,-0.2000
+12003,L'Alt Maestrat,Castellon,40.3500,-0.2500
+12004,El Baix Maestrat,Castellon,40.5000,0.2000
+12005,Els Ports,Castellon,40.5500,-0.3500
+12006,L'Alcalatens,Castellon,40.1000,-0.3200
+12007,L'Alt Millars,Castellon,40.0500,-0.5500
+12008,L'Alt Palancia,Castellon,39.8500,-0.5000
+12009,El Baix Maestrat Sud,Castellon,40.3000,0.0500
