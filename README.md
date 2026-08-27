@@ -23,6 +23,9 @@ An end-to-end flood vulnerability analysis platform built on Snowflake, combinin
 | Cortex Agent | Unified Q&A over structured data + unstructured documents |
 | Streamlit in Snowflake | Interactive 4-tab vulnerability dashboard |
 | Dynamic Tables | Auto-refreshing risk alert pipeline |
+| Apache Ossie | Open, portable semantic model interchange format |
+
+> **New to semantic models?** Read [`docs/understanding-apache-ossie.md`](docs/understanding-apache-ossie.md) for a from-scratch explainer covering semantic models, Snowflake Semantic Views/Cortex Analyst, and Apache Ossie — no prior knowledge assumed.
 
 ---
 
@@ -52,6 +55,8 @@ flood-resilience/
 │   └── policy_docs/
 │       ├── Valencia_Flood_Mitigation_Plan_2024_Intro.pdf
 │       └── Valencia_Flood_Mitigation_Plan_2024_Strategies.pdf
+├── docs/
+│   └── understanding-apache-ossie.md      ← Semantic models & Apache Ossie explainer
 ```
 
 ---
@@ -100,6 +105,7 @@ Run cells top to bottom. Each lab section is marked with a heading.
 | Lab 4 | Dynamic table for real-time alerts | 1 min |
 | Lab 5 | Upload policy PDFs + Cortex AI document intelligence | 2 min |
 | Lab 7 | Streamlit dashboard + Cortex Agent deployment | 2 min |
+| Lab 7D | Export semantic model to Apache Ossie | 3-5 min |
 
 > **Total runtime:** ~15-20 minutes on a MEDIUM warehouse.
 
@@ -192,9 +198,10 @@ Buildings         →   SVI CSV                →   Cortex Search
 | 4 | Dynamic Tables for automated risk alerts | 10 min |
 | 5 | Cortex AI — parse policy PDFs + semantic search | 20 min |
 | 7 | Streamlit dashboard + Cortex Agent deployment | 10 min |
+| 7D | Export semantic model to Apache Ossie | 10 min |
 | 8 | Cleanup (optional) | — |
 
-**Total: ~90 minutes**
+**Total: ~100 minutes**
 
 ---
 
