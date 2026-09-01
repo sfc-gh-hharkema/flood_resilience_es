@@ -87,9 +87,16 @@ flood-resilience/
 
 1. In Snowsight, click **Projects** → **Workspaces**
 2. Click **+** → **Git Workspace**
-3. Set the **Repository URL** and create an API integration named `FLOODS`
-4. Name the workspace `flood-resilience`
-5. Open `notebooks/flood_vulnerability_hol.ipynb` and connect to a service
+3. Set the **Repository URL** to https://github.com/sfc-gh-hharkema/flood_resilience_es
+4. Name the workspace `flood-resilience_es` (! use this name !)
+5. Click **+ API Integration** and create an API integration: 
+      - Name: `FLOODS` 
+      - Allowedprefixes: `github.com` 
+      - Allowed authentication secrets: `All`
+      - Click **Create**
+6. Select `Public repository`
+7. Click **Create** and wait for the workspace to be synced
+8. After the sync, open `notebooks/flood_vulnerability_hol.ipynb` and connect to a service
 
 ---
 
