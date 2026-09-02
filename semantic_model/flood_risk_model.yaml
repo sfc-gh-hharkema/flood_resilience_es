@@ -50,8 +50,8 @@ tables:
         expr: INLAND_FLOOD_RISK_RATING
         description: Fluvial (riverine) flooding risk rating for the zone
         data_type: TEXT
-      - name: COASTAL_FLOOD_RISK_RATING
-        expr: COASTAL_FLOOD_RISK_RATING
+      - name: COASTAL_RISK_RATING
+        expr: COASTAL_RISK_RATING
         description: Coastal flooding risk rating for the zone
         data_type: TEXT
     measures:
