@@ -88,10 +88,10 @@ flood-resilience/
 1. In Snowsight, click **Projects** → **Workspaces**
 2. Click **+** → **Git Workspace**
 3. Set the **Repository URL** to https://github.com/sfc-gh-hharkema/flood_resilience_es
-4. Name the workspace `flood-resilience_es` (! use this name !)
+4. Name the workspace `flood-resilience_es`  *(This should be the default, but make sure to use this name !)*
 5. Click **+ API Integration** and create an API integration: 
       - Name: `FLOODS` 
-      - Allowedprefixes: `github.com` 
+      - Allowedprefixes: `https://github.com` 
       - Allowed authentication secrets: `All`
       - Click **Create**
 6. Select `Public repository`
@@ -111,8 +111,8 @@ Run cells top to bottom. Each lab section is marked with a heading.
 | Lab 3 | Build flood risk tables + comarca summary | 2-4 min |
 | Lab 4 | Dynamic table for real-time alerts | 1 min |
 | Lab 5 | Upload policy PDFs + Cortex AI document intelligence | 2 min |
-| Lab 7 | Streamlit dashboard + Cortex Agent deployment | 2 min |
-| Lab 7D | Export semantic model to Apache Ossie | 3-5 min |
+| Lab 6 | Streamlit dashboard + Cortex Agent deployment | 2 min |
+| Lab 7 | Export semantic model to Apache Ossie | 3-5 min |
 
 > **Total runtime:** ~15-20 minutes on a MEDIUM warehouse.
 
@@ -204,8 +204,8 @@ Buildings         →   SVI CSV                →   Cortex Search
 | 3 | Geospatial flood risk analysis (H3 spatial joins) | 20 min |
 | 4 | Dynamic Tables for automated risk alerts | 10 min |
 | 5 | Cortex AI — parse policy PDFs + semantic search | 20 min |
-| 7 | Streamlit dashboard + Cortex Agent deployment | 10 min |
-| 7D | Export semantic model to Apache Ossie | 10 min |
+| 6 | Streamlit dashboard + Cortex Agent deployment | 10 min |
+| 7 | Export semantic model to Apache Ossie | 10 min |
 | 8 | Cleanup (optional) | — |
 
 **Total: ~100 minutes**
