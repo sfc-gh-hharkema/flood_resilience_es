@@ -91,7 +91,7 @@ tables:
         description: Expected annual loss for buildings specifically in euros
         data_type: NUMBER
         default_aggregation: 1
-      - name: 
+      - name: BUILDINGS_IN_SFHA
         expr: CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END
         description: Number of buildings in high-risk flood zones (A1 or A2)
         data_type: NUMBER
