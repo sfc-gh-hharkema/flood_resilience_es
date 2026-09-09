@@ -56,65 +56,65 @@ tables:
         data_type: TEXT
     measures:
       - name: BUILDING_COUNT
-        expr: COUNT(BUILDING_ID)
+        expr: BUILDING_ID
         description: Total number of buildings
         data_type: NUMBER
-        default_aggregation: count
+        default_aggregation: 5
       - name: COMPOSITE_VULNERABILITY_SCORE
-        expr: AVG(COMPOSITE_VULNERABILITY_SCORE)
+        expr: COMPOSITE_VULNERABILITY_SCORE
         description: >
           Average composite vulnerability score (0-100) combining flood risk (40%),
           social vulnerability (30%), and flood zone exposure (30%).
           Higher score = more vulnerable.
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: NRI_RISK_SCORE
-        expr: AVG(NRI_RISK_SCORE)
+        expr: NRI_RISK_SCORE
         description: Average flood risk score for the zone (0-100)
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: SVI_OVERALL
-        expr: AVG(SVI_OVERALL)
+        expr: SVI_OVERALL
         description: >
           Average Social Vulnerability Index score (0-1).
           0 = least vulnerable, 1 = most vulnerable.
           Accounts for socioeconomic status, demographics, and housing conditions.
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: EXPECTED_ANNUAL_LOSS
-        expr: SUM(EXPECTED_ANNUAL_LOSS)
+        expr: EXPECTED_ANNUAL_LOSS
         description: Total expected annual loss from flood hazards in euros
         data_type: NUMBER
-        default_aggregation: sum
+        default_aggregation: 1
       - name: EAL_BUILDINGS
-        expr: SUM(EAL_BUILDINGS)
+        expr: EAL_BUILDINGS
         description: Expected annual loss for buildings specifically in euros
         data_type: NUMBER
-        default_aggregation: sum
-      - name: BUILDINGS_IN_SFHA
-        expr: SUM(CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END)
+        default_aggregation: 1
+      - name: 
+        expr: CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END
         description: Number of buildings in high-risk flood zones (A1 or A2)
         data_type: NUMBER
-        default_aggregation: sum
+        default_aggregation: 1
       - name: PCT_IN_SFHA
-        expr: SUM(CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END) * 100.0 / COUNT(*)
+        expr: CASE WHEN IN_SPECIAL_FLOOD_HAZARD_AREA THEN 1 ELSE 0 END * 100 / BUILDING_COUNT
         description: Percentage of buildings located in high-risk flood zones
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: MOBILE_HOME_PCT
-        expr: AVG(MOBILE_HOME_PCT)
+        expr: MOBILE_HOME_PCT
         description: >
           Average elderly population percentile rank.
           Elderly residents face greater evacuation difficulties during floods.
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: NO_VEHICLE_PCT
-        expr: AVG(NO_VEHICLE_PCT)
+        expr: NO_VEHICLE_PCT
         description: >
           Average immigrant population percentile rank.
           Language barriers can impede emergency communication.
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
 
   - name: PARISH_FLOOD_SUMMARY
     base_table:
@@ -132,45 +132,45 @@ tables:
         unique: true
     measures:
       - name: TOTAL_BUILDINGS
-        expr: SUM(TOTAL_BUILDINGS)
+        expr: TOTAL_BUILDINGS
         description: Total number of buildings in the comarca
         data_type: NUMBER
-        default_aggregation: sum
+        default_aggregation: 1
       - name: BUILDINGS_IN_SFHA
-        expr: SUM(BUILDINGS_IN_SFHA)
+        expr: BUILDINGS_IN_SFHA
         description: Number of buildings in high-risk flood zones (A1 or A2)
         data_type: NUMBER
-        default_aggregation: sum
+        default_aggregation: 1
       - name: PCT_IN_SFHA
-        expr: AVG(PCT_IN_SFHA)
+        expr: PCT_IN_SFHA
         description: Percentage of buildings located in flood zones
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: AVG_COMPOSITE_SCORE
-        expr: AVG(AVG_COMPOSITE_SCORE)
+        expr: AVG_COMPOSITE_SCORE
         description: Average composite vulnerability score for the comarca (0-100)
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: AVG_NRI_RISK_SCORE
-        expr: AVG(AVG_NRI_RISK_SCORE)
+        expr: AVG_NRI_RISK_SCORE
         description: Average flood risk score for the comarca
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: AVG_SVI_SCORE
-        expr: AVG(AVG_SVI_SCORE)
+        expr: AVG_SVI_SCORE
         description: Average Social Vulnerability Index score for the comarca (0-1)
         data_type: NUMBER
-        default_aggregation: avg
+        default_aggregation: 2
       - name: TOTAL_EXPECTED_ANNUAL_LOSS
-        expr: SUM(TOTAL_EXPECTED_ANNUAL_LOSS)
+        expr: TOTAL_EXPECTED_ANNUAL_LOSS
         description: Total expected annual loss from flood hazards in euros
         data_type: NUMBER
-        default_aggregation: sum
+        default_aggregation: 1
       - name: BUILDING_EXPECTED_ANNUAL_LOSS
-        expr: SUM(BUILDING_EXPECTED_ANNUAL_LOSS)
+        expr: BUILDING_EXPECTED_ANNUAL_LOSS
         description: Expected annual loss for buildings in euros
         data_type: NUMBER
-        default_aggregation: sum
+        default_aggregation: 1
 
 verified_queries:
   - name: most_vulnerable_comarcas
