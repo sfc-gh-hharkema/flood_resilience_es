@@ -34,7 +34,9 @@ An end-to-end flood vulnerability analysis platform built on Snowflake, combinin
 ```
 flood-resilience/
 ├── notebooks/
-│   └── flood_vulnerability_hol.ipynb       ← Main HOL notebook (Labs 1-8)
+│   └── flood_vulnerability_hol.ipynb       ← Main HOL notebook (Labs 1-7)
+├── sql/
+│   └── fallback.sql                       ← fallback if SPCS is not working
 ├── streamlit/
 │   ├── .streamlit/
 │   │   └── config.toml                    ← Snowflake brand theme
@@ -65,7 +67,7 @@ flood-resilience/
 
 ### Prerequisites
 
-- Snowflake account with **ACCOUNTADMIN** role (trial accounts work)
+- Snowflake account with **ACCOUNTADMIN** role (trial accounts work, provided they are cortex enabled)
 - A web browser (Chrome recommended)
 
 ---
@@ -79,7 +81,7 @@ flood-resilience/
 5. Click **Get** and set the database name to **`OVERTURE_MAPS_BUILDINGS`**
 6. Select **PUBLIC** role and click **Get** again
 
-> **How to verify:** Go to **Data → Databases**. You should see `OVERTURE_MAPS_BUILDINGS` listed.
+> **How to verify:** Go to **Catalog → Explorer**. You should see `OVERTURE_MAPS_BUILDINGS` listed.
 
 ---
 
@@ -94,13 +96,22 @@ flood-resilience/
       - Allowedprefixes: `https://github.com` 
       - Allowed authentication secrets: `All`
       - Click **Create**
-6. Select `Public repository`
+6. Select `Public repository` *Authentication is not required*
 7. Click **Create** and wait for the workspace to be synced
-8. After the sync, open `notebooks/flood_vulnerability_hol.ipynb` and connect to a service
 
 ---
 
 ### Step 3 — Run the Notebook
+
+Open the notebook at `/notebooks/flood_vulnerability_hol.ipynb`
+Notebooks are executed via SPCS (Snowpark Container Services).
+Before execution you need to create a service:
+
+1. Click the arrow down button right of *Connect*
+2. Click `+ Create new service`
+3. Default settings are ok, so click `Create and connect`
+4. It will take a minute or so to start the container, once it is ready you'll see a green check mark and *Connected*
+
 
 Run cells top to bottom. Each lab section is marked with a heading.
 
