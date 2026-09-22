@@ -131,6 +131,8 @@ Run cells top to bottom. Each lab section is marked with a heading.
 
 ### Step 4 — Use the Dashboard
 
+You will find the dashboard at: **Projects → Streamlit**.
+
 **4 tabs:**
 
 | Tab | Content |
@@ -149,7 +151,8 @@ Run cells top to bottom. Each lab section is marked with a heading.
 
 ### Step 5 — Use the Cortex Agent
 
-The agent combines **structured data** + **unstructured policy documents**:
+The agent combines **structured data** + **unstructured policy documents**
+It can be accessed via **AI&ML → Agent Studio**
 
 | Question | Tools Used |
 |---|---|
