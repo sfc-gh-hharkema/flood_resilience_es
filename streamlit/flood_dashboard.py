@@ -332,7 +332,7 @@ with tab4:
                         ', loss=$'||TOTAL_EXPECTED_ANNUAL_LOSS, '\\n')
                      FROM (SELECT * FROM FLOOD_ANALYTICS.FLOOD.PARISH_FLOOD_SUMMARY
                            ORDER BY AVG_COMPOSITE_SCORE DESC LIMIT 20)),
-                    '\\n\\nQUESTION: {safe_q}\\nANSWER:')) AS ANSWER
+                    '\\n\\nQUESTION: {safe_q}\\nANSWER:'))::STRING AS ANSWER
             """).to_pandas()
             answer = result["ANSWER"].iloc[0]
             if answer:

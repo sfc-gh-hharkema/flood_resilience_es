@@ -415,7 +415,7 @@ SELECT AI_COMPLETE('claude-haiku-4-5', CONCAT(
     (SELECT LISTAGG(PARISH||': composite='||AVG_COMPOSITE_SCORE||', SVI='||AVG_SVI_SCORE||
         ', '||PCT_IN_SFHA||'% in flood zone, loss='||TOTAL_EXPECTED_ANNUAL_LOSS||' EUR', '\n')
      FROM (SELECT * FROM PARISH_FLOOD_SUMMARY ORDER BY AVG_COMPOSITE_SCORE DESC LIMIT 15))
-)) AS EXECUTIVE_SUMMARY;
+))::STRING AS EXECUTIVE_SUMMARY;
 
 -- Lab 6: Deploy Streamlit Dashboard and Cortex Agent
 
