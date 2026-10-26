@@ -156,7 +156,7 @@ You will find the dashboard at: **Projects → Streamlit**.
 ### Step 5 — Use the Cortex Agent
 
 The agent combines **structured data** + **unstructured policy documents**
-It can be accessed via **AI&ML → Agent Studio**
+It can be accessed via **AI&ML → Agent Studio → Preview**
 
 | Question | Tools Used |
 |---|---|
