@@ -17,9 +17,9 @@ An end-to-end flood vulnerability analysis platform built on Snowflake, combinin
 | Snowflake Marketplace | Overture Maps Buildings (2.3B global footprints) |
 | Geospatial + H3 Functions | Spatial joins, hexagonal risk mapping |
 | Internal Stages | Loading flood risk + social vulnerability CSV data |
-| Cortex PARSE_DOCUMENT | Extracting text from flood policy PDFs |
+| AI_PARSE_DOCUMENT | Extracting text from flood policy PDFs |
 | Cortex Search | Semantic search over policy documents |
-| Cortex COMPLETE | AI-generated risk summaries |
+| AI_COMPLETE | AI-generated risk summaries |
 | Cortex Agent | Unified Q&A over structured data + unstructured documents |
 | Streamlit in Snowflake | Interactive 4-tab vulnerability dashboard |
 | Dynamic Tables | Auto-refreshing risk alert pipeline |
@@ -76,10 +76,14 @@ flood-resilience/
 
 1. Log in to **Snowsight** (https://app.snowflake.com)
 2. Click **Marketplace** in the left sidebar
-3. Search for **"Overture Maps - Buildings"**
-4. Find the listing by **CARTO** and click on it
-5. Click **Get** and set the database name to **`OVERTURE_MAPS_BUILDINGS`**
-6. Select **PUBLIC** role and click **Get** again
+3. The search box has 2 modes, AI ✦ and Search 🔍 , select **Search**
+4. Search for **"Overture Maps - Buildings"**
+5. Find the listing by **CARTO** and click on it
+6. Click **Get** top right and use the Options to:
+     - set the database name to **`OVERTURE_MAPS_BUILDINGS`** (default)
+     - select the **PUBLIC** role for access
+7. Click **Get** again
+8. Close the dialog with the **Done** button
 
 > **How to verify:** Go to **Catalog → Explorer**. You should see `OVERTURE_MAPS_BUILDINGS` listed.
 
@@ -90,10 +94,10 @@ flood-resilience/
 1. In Snowsight, click **Projects** → **Workspaces**
 2. Click **+** → **Git Workspace**
 3. Set the **Repository URL** to https://github.com/sfc-gh-hharkema/flood_resilience_es
-4. Name the workspace `flood-resilience_es`  *(This should be the default, but make sure to use this name !)*
+4. Name the workspace `flood_resilience_es`  *(This should be the default, but make sure to use this name !)*
 5. Click **+ API Integration** and create an API integration: 
       - Name: `FLOODS` 
-      - Allowedprefixes: `https://github.com` 
+      - Allowed prefixes: `https://github.com` 
       - Allowed authentication secrets: `All`
       - Click **Create**
 6. Select `Public repository` *Authentication is not required*
@@ -178,9 +182,9 @@ It can be accessed via **AI&ML → Agent Studio**
 
 ```
 MARKETPLACE              STAGES                     CORTEX AI
-Overture Maps     →   Flood Risk CSV         →   PARSE_DOCUMENT
+Overture Maps     →   Flood Risk CSV         →   AI_PARSE_DOCUMENT
 Buildings         →   SVI CSV                →   Cortex Search
-                  →   Policy PDFs            →   Cortex COMPLETE
+                  →   Policy PDFs            →   AI_COMPLETE
         ↓                  ↓                          ↓
               FLOOD_ANALYTICS.FLOOD schema
         ┌──────────────────────────────────┐

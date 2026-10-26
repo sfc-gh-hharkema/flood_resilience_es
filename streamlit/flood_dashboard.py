@@ -324,7 +324,7 @@ with tab4:
         safe_q = user_question.replace("'", "''")
         with st.spinner("Analysing with Cortex AI..."):
             result = session.sql(f"""
-                SELECT SNOWFLAKE.CORTEX.COMPLETE('llama3.1-70b', CONCAT(
+                SELECT AI_COMPLETE('claude-haiku-4-5', CONCAT(
                     'You are a Valencia flood risk expert. Answer concisely.\\n\\n',
                     'COMARCA DATA:\\n',
                     (SELECT LISTAGG(PARISH||': composite='||AVG_COMPOSITE_SCORE||
@@ -334,8 +334,12 @@ with tab4:
                            ORDER BY AVG_COMPOSITE_SCORE DESC LIMIT 20)),
                     '\\n\\nQUESTION: {safe_q}\\nANSWER:')) AS ANSWER
             """).to_pandas()
-            st.success("**AI Response:**")
-            st.write(result["ANSWER"].iloc[0])
+            answer = result["ANSWER"].iloc[0]
+            if answer:
+                st.success("**AI Response:**")
+                st.write(answer)
+            else:
+                st.warning("The AI model returned no answer. Please try again.")
 
     st.markdown("---")
 
